@@ -25,6 +25,17 @@
 
     //Code Here
 
+    var user = {
+      username: "Russell",
+      email: "Russell@email.com",
+      getUsername: function(){
+        return this.username;
+      }
+
+    };
+
+    user.getUsername();
+
 //Now, invoke the getUsername method and verify you got the username of the object and not anything else.
 
 
@@ -32,6 +43,18 @@
 
 
 // Write the function definitions which will make the following function invocations function properly.
+
+var Car = function(make, model, year, move){
+  this.make = make;
+  this.model = model;
+  this.year = year;
+  this.move = move;
+  this.moveCar = function(){
+    return move += 10;
+  }
+
+
+}
 
   //Function Invocations Here
 

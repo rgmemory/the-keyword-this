@@ -49,13 +49,14 @@ var Car = function(make, model, year, move){
   this.model = model;
   this.year = year;
   this.move = move;
-  this.moveCar = function(){
-    return move += 10;
-  }
-
-
 }
 
+Car.prototype.moveCar = function(){
+  this.move += 10;
+  return this.move;
+}
+
+Car.prototype.getYear = getYear;
   //Function Invocations Here
 
 var prius = new Car('Toyota', 'Prius', 2011);
@@ -70,9 +71,10 @@ mustang.moveCar(); //increments mustang' move property by 10. Returns the new mo
 
 //Continuation of previous problem
 
-var getYear = function(){
+function getYear(){
   return this.year;
 };
+
 
 //Above you're given the getYear function. Using your prius and mustang objects from above, use the proper syntax that will allow for you to call the getYear function with the prius then the mustang objects being the focal objects. *Don't add getYear as a property on both objects*.
 
@@ -82,17 +84,21 @@ var getYear = function(){
 
 //New Problem
 
+
+
 var myUser = {
  username: 'iliketurtles',
  age: 13,
  email: 'iliketurtles@gmail.com'
 };
 
+
 var getMyUsername = function() {
  return this.username;
 };
 
-var userName = getMyUsername(); //Fix this
+
+var userName = getMyUsername.bind(myUser)(); //Fix this
 
 //Above you're given an object, and  a function. What will the getUsername function return?
 //Note(no tests)
